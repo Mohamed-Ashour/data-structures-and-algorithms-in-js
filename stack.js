@@ -31,11 +31,51 @@ const stack = new Stack()
 // console.log(stack.pop())
 // console.log(stack.pop())
 
+const stortStack = function (stack) {
+    const content = []
+    do {
+        content.push(stack.pop())
+    } while (stack.peek() !== undefined);
+
+    content.sort()
+    content.reverse()
+    const sortedStack = new Stack() 
+
+    for (let index = 0; index < content.length; index++) {
+        sortedStack.push(content[index])
+    }
+    
+    return sortedStack
+}
+
+const sortedStack = stortStack(stack);
+
+
+// console.log(sortedStack.pop())
+// console.log(sortedStack.pop())
+// console.log(sortedStack.pop())
 
 
 balancedParens = function (pattern) {
-    pattern
-};
+    const stack = new Stack() 
+    for (let index = 0; index < pattern.length; index++) {
+        const char = pattern[index]
+        
+        if (char === '(') {
+            stack.push(char)
+        } else if (char === ')') {
+            const value = stack.pop()
+            if (value !== '(') return false
+        }
+    }
 
-balancedParens("sqrt(5*(3+8)/(4-2))"); 
-balancedParens("Math.min(5,(6-3))(");
+    return stack.peek() === undefined
+}
+
+// console.log(balancedParens("sqrt(5*(3+8)/(4-2))"))
+// console.log(balancedParens("sqrt(5*(3+8)/(4-2)) = (x(z(y)))"))
+// console.log(balancedParens("sqrt(5*(3+8)/(4-2))()(())()"))
+// console.log(balancedParens("sqrt(5*(3+8)/(4-2))()(())("))
+// console.log(balancedParens("sqrt(5*(3+8)/(4-2))"))
+// console.log(balancedParens("sqrt(5*(3+8)/(4-2)"))
+// console.log(balancedParens("Math.min(5,(6-3))("))

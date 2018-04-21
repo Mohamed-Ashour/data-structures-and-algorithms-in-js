@@ -28,12 +28,12 @@ Queue.prototype.count = function() {
 
 const queue = new Queue()
 
-queue.enqueue('a')
-queue.enqueue('b')
-queue.enqueue('c')
-console.log(queue.dequeue())
-console.log(queue.dequeue())
-console.log(queue.dequeue())
-console.log(queue.dequeue())
-queue.enqueue('h')
-console.log(queue.dequeue());
+// queue.enqueue('a')
+// queue.enqueue('b')
+// queue.enqueue('c')
+// console.log(queue.dequeue())
+// console.log(queue.dequeue())
+// console.log(queue.dequeue())
+// console.log(queue.dequeue())
+// queue.enqueue('h')
+// console.log(queue.dequeue());
